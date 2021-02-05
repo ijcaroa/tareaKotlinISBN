@@ -1,44 +1,30 @@
 package com.example.tareakotlinisbn
 
+import android.net.IpPrefix
 import kotlin.math.E
 
-class LibrosEscolares {
+data class LibrosEscolares(val nombre: String, val ISBN: Long, var Año: Int, var paginas: Int, var Precio: Int, var Autor: String, var Formato: Char) {
 
 
 }
-fun main(){
+fun main() {
 
-val bookList = mutableListOf("Tom Sawyer", 123456789, 1843, "4343", "Mark Twain", 'I' )
+    var libros = LibrosEscolares("Tom Sawyer", 1234567891, 1854,
+            235, 4990, "Mark Twain", 'I')
 
+    var libros2 = LibrosEscolares("Hijo de Ladrón", 1236325734,
+            1957, 198, 3990,"Manuel Rojas", 'I'  )
 
+    precioFormateado(libros.Precio)
+    imprimirLista(libros)
+}
 
-
-    bookList.add ("Hijo de ladrón",12349087654, 1957, "$4356", "Manuel Rojas", 'I')
-
-
-
-println(bookList)
-
-
-
-
-
-
+fun precioFormateado(precio: Int, prefix: Char = '$'){
+    println("Precio = $prefix$precio")
+}
+fun imprimirLista(libros: LibrosEscolares){
+    println(libros)
 }
 
 
-//fun <agregar> MutableList<agregar>.add(a: )
 
- fun <agregar> MutableList<agregar>.add(Nombre: String, ISBN: Long, Año: Int, Precio: String, Autor: String, Formato: Char) {
-
-}
-
-fun bookList(Nombre:String, ISBN:Long, Año:Int, Precio:String, Autor:String, Formato:Char ){
-
-}
-fun addLibros(any: Any){
-    bookList("Hijo de ladrón",12349087654, 1957, "$4356", "Manuel Rojas", 'I')
-}
-fun buscadorPrecio(any: Any){
-
-}
